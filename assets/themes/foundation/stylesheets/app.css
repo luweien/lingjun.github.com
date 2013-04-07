@@ -1,0 +1,91 @@
+/* Artfully masterminded by ZURB  */
+
+/* -------------------------------------------------- 
+   Table of Contents
+-----------------------------------------------------
+:: Shared Styles
+:: Page Name 1
+:: Page Name 2
+*/
+
+
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */
+header{
+    background: #0480be;
+    padding: 22px 0;
+    margin-bottom: 40px;
+}
+
+header * {
+    color: whiteSmoke !important;
+    /*text-shadow: 2px 2px 1px darkGreen;*/
+}
+
+.pagination {
+    text-align: center;
+}
+
+
+@font-face {
+  font-family: '[set]Foundicons';
+  src: url('fonts/[set]_foundicons.eot');
+  src: url('fonts/[set]_foundicons.eot?#iefix') format('embedded-opentype'),
+       url('fonts/[set]_foundicons.woff') format('woff'),
+       url('fonts/[set]_foundicons.ttf') format('truetype'),
+       url('fonts/[set]_foundicons.svg#[set]Foundicons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+ 
+ [class*="foundicon-"] {
+  display: inline;
+  width: auto;
+  height: auto;
+  line-height: inherit;
+  vertical-align: baseline;
+  background-image: none;
+  background-position: 0 0;
+  background-repeat: repeat;
+}
+ 
+[class*="foundicon-"]:before {
+  font-family: "[set]Foundicons";
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+}
+
+[class*="social foundicon-"]:before {
+  font-family: "SocialFoundicons";
+}
+
+.highlight{
+    background-color: ghostWhite;
+}
+
+a i {
+    color: #000;
+    font-size: 35px;
+    margin-right: 20px;
+}
+
+a i:hover{
+    color: #2BA6CB 
+}
+
+
+
+/* -----------------------------------------
+   Page Name 1
+----------------------------------------- */
+
+
+
+
+/* -----------------------------------------
+   Page Name 2
+----------------------------------------- */
+
+
