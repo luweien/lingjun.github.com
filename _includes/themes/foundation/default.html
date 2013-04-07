@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+    {% if page.description %}<meta name="description" content="{{ page.title }} - {{ page.description }}">{% endif %}
+    <meta name="author" content="{{ site.author.name }}">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="{{ ASSET_PATH }}/stylesheets/foundation.min.css" rel="stylesheet">
+    <link href="{{ ASSET_PATH }}/stylesheets/app.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="stylesheet" href="{{ ASSET_PATH }}/stylesheets/social_foundicons.css">
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+
+  </head>
+
+  <body>
+  <div class="row contain-to-grid">
+      <nav class="top-bar">
+          <ul class="left">
+              <li><a title="Home" href="http://lingjun.github.com">{{ site.title }}</a></li>
+              <li class="divider"></li>
+              <li><a title="Archive" href="{{ BASE_PATH }}/archive.html">Archive</a></li>
+              <li class="divider"></li>
+              <li><a title="Category" href="{{ BASE_PATH }}/categories.html">Category</a></li>
+          </ul>
+
+          <ul class="right">
+
+              <li class="has-dropdown">
+                          <a href="#">Social</a>
+                          <ul class="dropdown"><li class="title back js-generated"><h5><a href="#">Social</a></h5></li>
+                            <li><a target="_blank" title="Go to github.com/lingjun"  href="https://github.com/lingjun">Github</a></li>
+                              <!--
+                            <li><a target="_blank" title="Go to twitter.com/ThibaultLaurens" href="https://twitter.com/ThibaultLaurens">Twitter</a></li>
+                            <li><a target="_blank" title="Go to linkedin.com/thibault-laurens" href="http://www.linkedin.com/pub/thibault-laurens/13/b58/40b">LinkedIn</a></li>
+                          -->
+                          </ul>
+                        </li>
+              <li class="divider"></li>
+              <li><a title="Go to github.com/lingjun" href="https://github.com/lingjun?tab=repositories" target="_blank">Projects</a></li>
+              <li class="divider"></li>
+              <li><a title="Go to flickr.com/photos/lingjun" href="http://www.flickr.com/photos/lingjun/" target="_blank">Photo</a></li>
+              <li class="divider"></li>
+              <li><a title="More info about me" href="{{ BASE_PATH }}/about.html">About</a></li>
+ <!--
+              <li class="has-dropdown">
+                  <a href="#">Link</a>
+
+                  <ul class="dropdown">
+                      <li><a href="#">Dropdown Link</a></li>
+                  </ul>
+
+              </li>
+              {% assign pages_list = site.pages %}
+              {% assign group = 'navigation' %}
+              {% include JB/pages_list %}
+-->
+          </ul>
+      </nav>
+  </div>
+
+      <section>
+        {{ content }}
+      </section>
+
+      <footer class="row">
+          <hr>
+        <div class="eight columns">
+            <p style="padding-top: 0px">
+                <a title="Go to github.com/lingjun" target="_blank" href="https://github.com/lingjun"><i class="foundicon-github"></i></a>
+               <!-- <a title="Go to facebook.com/thibault.laurens" target="_blank" href="https://www.facebook.com/thibault.laurens"><i class="social foundicon-facebook"></i></a>
+                <a title="Go to linkedin.com/thibault-laurens" target="_blank" href="http://www.linkedin.com/pub/thibault-laurens/13/b58/40b"><i class="social foundicon-linkedin"></i></a>
+                <a title="Go to twitter.com/ThibaultLaurens" target="_blank" href="https://twitter.com/ThibaultLaurens"><i class="social foundicon-twitter"></i></a>
+                <a title="Go to flickr.com/photos/thibaultlaurens" target="_blank" href="http://www.flickr.com/photos/thibaultlaurens/"><i class="social foundicon-flickr"></i></a>
+           --> </p>
+                <p>
+                    &copy; {{ site.author.name }} 2013 with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+                  and <a href="http://foundation.zurb.com" target="_blank" title="The most advanced responsive front-end framework in the world.">Zurb's Foundation 3</a>
+                </p>
+        </div>
+        <div class="four columns right">
+        <img alt="technut" src="{{ ASSET_PATH }}/images/technut.png"/>
+        </div>
+      </footer>
+
+ <!-- /container -->
+
+    {% include JB/analytics %}
+
+      <script type="text/javascript">
+		var disqus_shortname = 'thibaultlaurens';
+		var disqus_identifier = '{{ page.url }}';
+		var disqus_url = 'http://thibaultlaurens.github.com{{ page.url }}';
+ 
+		/* * * DON'T EDIT BELOW THIS LINE * * */
+		(function () {
+			var s = document.createElement('script'); s.async = true;
+			s.type = 'text/javascript';
+			s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+			(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+		}());
+	</script>
+
+  </body>
+
+</html>

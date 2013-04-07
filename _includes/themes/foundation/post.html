@@ -1,0 +1,57 @@
+<header>
+    <div class="row">
+    <div class="twelve columns">
+        <h1>{{ page.title }} </h1>
+        {% if page.tagline %} 
+            <h4 class="subheader">{{ page.tagline }}</h4>
+        {% else if page.description %}
+            <h4 class="subheader">{{ page.description }}</h4>
+        {% endif %}
+    </div>
+    </div>
+</header>
+
+<div class="row">
+  <div class="nine columns">
+    {{ content }}
+    <hr>
+    <div class="row pagination">
+        <div class="four columns">
+                  {% if page.previous %}
+                    <div class="prev"><a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Previous</a></div>
+                  {% else %}
+                    <div class="prev disabled"><a>&larr; Previous</a></div>
+                  {% endif %}
+        </div>
+        <div class="four columns">
+            <div><a href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive</a></div>
+        </div>
+        <div class="four columns">
+                  {% if page.next %}
+                    <div class="next"><a href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">Next &rarr;</a></div>
+                  {% else %}
+                    <div class="next disabled"><a>Next &rarr;</a></div>
+                  {% endif %}
+        </div>
+    </div>
+    <hr>
+    {% include JB/comments %}
+  </div>
+
+
+    <div class="two columns offset-by-one">
+      <h4>Published</h4>
+      <div class="date"><span>{{ page.date | date_to_long_string }}</span></div> 
+    </div>
+
+      <div class="two columns offset-by-one" style="padding-top: 30px">
+        <h4>Category</h4>
+        {{ page.category }}
+      </div>
+
+        <div class="two columns offset-by-one"  style="padding-top: 30px">
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="thibaultlaurens">Tweet</a>
+      </div>
+</div>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
