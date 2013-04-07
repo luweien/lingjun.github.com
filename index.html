@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Li shupeng's Personal blog !
-tagline: reads thoughts life technology
+title: 李书鹏的个人博客 !
+tagline: 读书 行路 生活 技术
 description: reads thoughts life technology
 ---
 {% include JB/setup %}
@@ -12,8 +12,9 @@ description: reads thoughts life technology
         {% for post in paginator.posts %}
             <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
             <p>
-                {{ post.content | strip_html | truncatewords:75}}
-                <a href="{{ post.url }}"><strong>Read more.</strong></a><br/>
+                <!-- post.content | strip_html | truncatewords:75}}  -->
+                {{ post.content  | | split:'<!--break-->' | first}}
+                <a href="{{ post.url }}"><strong>阅读全文/Read more.</strong></a><br/>
             </p>
             <p>
                 <strong>
@@ -30,10 +31,7 @@ description: reads thoughts life technology
         {% endfor %}
     </div>
 
-
-
-
-      <!-- Pagination links -->
+      <!-- 分页器: Pagination links -->
 <div id="post-pagination" class="pagination">
    <hr>
      <br/>
@@ -42,26 +40,26 @@ description: reads thoughts life technology
     {% if paginator.previous_page == 1 %}
     <a href="/">&larr; Previous</a>
     {% else %}
-    <a href="/page{{paginator.previous_page}}">&larr; Previous</a>
+    <a href="/page{{paginator.previous_page}}">&larr; 上一页/Previous</a>
     {% endif %}
   </div>
   {% else %}
   <div class="four columns previous disabled">
-    <span>&larr; Previous</span>
+    <span>&larr; 前一页/Previous</span>
   </div>
   {% endif %}
 
 <div class="four columns">
-<span class="page_number ">Page: {{paginator.page}} of {{paginator.total_pages}}</span>
+<span class="page_number ">当前页/Page: {{paginator.page}} of {{paginator.total_pages}}</span>
 </div>
 
   {% if paginator.next_page %}
   <div class="four columns next">
-    <a href="/page{{paginator.next_page}}">Next &rarr;</a>
+    <a href="/page{{paginator.next_page}}">下一页/Next &rarr;</a>
   </div>
   {% else %}
   <div class="four columns next disabled">
-    <span>Next &rarr;</span>
+    <span>下一页/Next &rarr;</span>
   </div>
   {% endif %}
      <br/> <br/>
@@ -70,7 +68,7 @@ description: reads thoughts life technology
   </div>
 
   <div class="two columns offset-by-one">
-              <a href="categories.html"><h4>Category</h4></a>
+              <a href="categories.html"><h4>分类</h4></a>
               <strong><ul>
                 {% assign categories_list = site.categories %}
                 {% include JB/categories_list %}
@@ -78,7 +76,7 @@ description: reads thoughts life technology
   </div>
 
   <div class="two columns offset-by-one">
-              <h4>Blogroll</h4>
+              <h4>友情链接</h4>
               <ul>
                   <li><a target="_blank" title="Los Techies" href="http://lostechies.com/"><strong>Los Techies</strong></a></li>
                   <li><a target="_blank" title="Scott Hanselman" href="http://www.hanselman.com/blog/"><strong>Scott Hanselman</strong></a></li>
