@@ -6,8 +6,7 @@ layout: post
 slug: read_notes_in_2012
 title: 2012书单
 wordpress_id: 124
-categories:
-- 读书
+categories: [读书]
 ---
 
 **小说·杂说类**

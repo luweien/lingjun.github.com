@@ -6,10 +6,9 @@ layout: post
 slug: maxmize_java_nio_and_nio2_for_application_responsiveness
 title: '最大化Java NIO和NIO.2的五种方式 ---利用NIO API构建高响应性的Java应用 '
 wordpress_id: 116
-categories:
-- 译文
+categories: [技术]
 ---
-
+ `本文为译文`
 Java NIO---新输入/输出API包是在2002年发行的J2SE1.4中引入的。Java NIO的目的在于提升Java平台上I/O密集的编程。十年过去了，很多Java程序员仍然不知道如何最好的使用NIO，更少有人关注到了在Java SE7中引入的NIO.2（More NIO）。在这个教学中，将看到Java编码中利用NIO和NIO.2优点的五个简单示例。
 
 Java中NIO和NIO.2的最初贡献是提升I/O处理的性能，而I/O处理是Java应用开发中的核心之一。该API既不容易上手，也不是日常必备。然而，如果正确使用Java NIO和NIO.2，便能大幅减少某些通用I/O操作的时间。这才是NIO和NIO.2的强大之处，本文列举了相关的五个简单方式。

@@ -6,8 +6,7 @@ layout: post
 slug: practice_in_objectc_object_message_method
 title: Object-c实践之路：第二章 对象、消息与方法
 wordpress_id: 103
-categories:
-- 心得
+categories: [技术]
 ---
 
 #### 摘要

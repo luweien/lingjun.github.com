@@ -6,8 +6,7 @@ layout: post
 slug: wants_to_do_in_2013
 title: 2013年想做的事
 wordpress_id: 128
-categories:
-- 杂谈
+categories: [生活]
 ---
 
 1 提高对环境的认知。将手机、mac等工具的功能从10%挖掘到50%。

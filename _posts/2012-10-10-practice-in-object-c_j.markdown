@@ -6,8 +6,7 @@ layout: post
 slug: practice_in_object_c_j
 title: Object-c实践之路:第一章 起步
 wordpress_id: 86
-categories:
-- 心得
+categories: [技术]
 ---
 
 #### 摘要

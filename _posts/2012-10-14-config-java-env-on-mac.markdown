@@ -6,8 +6,7 @@ layout: post
 slug: config_java_env_on_mac
 title: Mac下配置Java开发环境
 wordpress_id: 96
-categories:
-- 心得
+categories: [配置]
 ---
 
 ### 内容概要

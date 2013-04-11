@@ -6,8 +6,7 @@ layout: post
 slug: zk_source_analysis_of_standalone_startup
 title: ZooKeeper源码分析之一——单机模式启动过程
 wordpress_id: 24
-categories:
-- 读代码
+categories: [技术]
 ---
 
 了解和学习了下zookeeper，将阅读的部分源代码过程分享下，关于zookeeper的原理性文章请参考[ZooKeeper论文阅读笔记](http://readsandthoughts.sinaapp.com/zookeeper_paper_notes/)

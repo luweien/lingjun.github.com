@@ -6,8 +6,7 @@ layout: post
 slug: zookeeper_paper_notes
 title: ZooKeeper论文阅读笔记
 wordpress_id: 54
-categories:
-- 读文字
+categories: [技术]
 ---
 
 论文原文：[ZooKeeper: Wait-free coordination for Internet-scale systems](http://static.usenix.org/event/usenix10/tech/full_papers/Hunt.pdf)

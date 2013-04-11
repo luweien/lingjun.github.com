@@ -6,9 +6,7 @@ layout: post
 slug: understand_zk_concepts
 title: ZooKeeper中的概念剖析
 wordpress_id: 61
-categories:
-- 读文字
----
+categories: [技术]
 
 [ZooKeeper](http://zookeeper.apache.org)作为一个分布式协调服务，涉及到了很多具有特色的名词与概念，本文意在对此部分内容进行下梳理。本文的内容是连接[ZooKeeper学术文章](http://readsandthoughts.sinaapp.com/zookeeper_paper_notes/)是系统实现的纽带，增强本文的理解对ZooKeeper的整体的理解帮助巨大。
 

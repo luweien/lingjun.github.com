@@ -6,8 +6,7 @@ layout: post
 slug: learn_mac_from_scratch_one
 title: Mac新手入门配置之道
 wordpress_id: 72
-categories:
-- 心得
+categories: [配置]
 tags:
 - mac
 - 新手配置
