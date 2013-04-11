@@ -6,9 +6,7 @@ layout: post
 slug: memory_management_of_java_part_one_foundation
 title: Java内存管理知识(基础篇)
 wordpress_id: 145
-categories:
-- 读书
-- 读文字
+categories: [技术]
 ---
 
 第一部分 基础知识
