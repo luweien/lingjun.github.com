@@ -79,7 +79,7 @@ categories: [技术]
 
 
 
-本文很多都是针对Oracle 的HotSpot的，内存和垃圾回收的更一般知识请参考JVM规范或者[Java虚拟机之垃圾收集](http://shupeng.org/garbage-collection-of-java-virtual-machine/)获取。
+本文很多都是针对Oracle 的HotSpot的，内存和垃圾回收的更一般知识请参考JVM规范或者[Java虚拟机之垃圾收集](http://shupeng.org/2013/01/20/memory-management-of-java-part-one-foundation/)获取。
 
 
 

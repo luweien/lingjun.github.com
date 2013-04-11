@@ -9,6 +9,7 @@ wordpress_id: 116
 categories: [技术]
 ---
  `本文为译文`
+
 Java NIO---新输入/输出API包是在2002年发行的J2SE1.4中引入的。Java NIO的目的在于提升Java平台上I/O密集的编程。十年过去了，很多Java程序员仍然不知道如何最好的使用NIO，更少有人关注到了在Java SE7中引入的NIO.2（More NIO）。在这个教学中，将看到Java编码中利用NIO和NIO.2优点的五个简单示例。
 
 Java中NIO和NIO.2的最初贡献是提升I/O处理的性能，而I/O处理是Java应用开发中的核心之一。该API既不容易上手，也不是日常必备。然而，如果正确使用Java NIO和NIO.2，便能大幅减少某些通用I/O操作的时间。这才是NIO和NIO.2的强大之处，本文列举了相关的五个简单方式。
@@ -53,13 +54,13 @@ Java中NIO和NIO.2的最初贡献是提升I/O处理的性能，而I/O处理是Ja
 
 很多企业级的应用在如下场景中需要做采取指定动作：
 
-l  上传文件到FTP文件夹
+*  上传文件到FTP文件夹
 
-l  配置定义发生改变
+*  配置定义发生改变
 
-l  草图文档发生更新
+*  草图文档发生更新
 
-l  另一个文件系统事件发生
+*  另一个文件系统事件发生
 
 这些都是变更通知或变更响应的例子。在Java（和其它语言）的早期版本，轮询(polling)是典型的探测变更事件的最好方式。轮询是一种特定的无限循环：检查文件系统或其它对象，将它和它的上一个已知状态做比较，如果没有变更，在一定间隔之后重新检查，而间隔可能是几百毫秒，或几十秒。
 
@@ -67,19 +68,21 @@ NIO.2展示了一个更好的方式来探测变更通知，例1是一个简单�
 
 例1：NIO.2中的变更通知
 
-[code lang="java"]import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardWatchEventKinds;
-import java.nio.file.WatchEvent;
-import java.nio.file.WatchKey;
-import java.nio.file.WatchService;
-import java.util.List;
 
-public class Watcher {
+    import java.nio.file.Path;
+    import java.nio.file.Paths;
+    import java.nio.file.StandardWatchEventKinds;
+    import java.nio.file.WatchEvent;
+    import java.nio.file.WatchKey;
+    import java.nio.file.WatchService;
+    import java.util.List;
+
+    public class Watcher {
     public static void main(String[] args) {
         Path this_dir = Paths.get(".");
         System.out.println(this_dir.toAbsolutePath());
-        System.out.println("Now watching the current directory ...");
+        System.out.println("Now watching the current director
+          y …");
 
         try {
             WatchService watcher = this_dir.getFileSystem().newWatchService();
@@ -94,14 +97,14 @@ public class Watcher {
            }
 
        } catch (Exception e) {
-           System.out.println("Error: " + e.toString());
+           Syst[/code]m.out.println("Error: " + e.toString());
        }
     }
-}[/code]
+    }
 
-编译源代码，然后命令行执行。在同一个目录下，创建一个新文件；你可以touch example1，或者甚至copy Watcher.class example1。你将看到如下的变更通知消息：
+编译源代码，然后命令行执行。在同一个目录下，创建一个新文件；你可以`touch example1`，或者甚至`copy Watcher.class example1`。你将看到如下的变更通知消息：
 
-Someone just create the file ‘example’.
+`Someone just create the file ‘example’.`
 
 这简单的例子描述了如何开始用Java访问NIO的语言功能。它也介绍了NIO.2的Watch类，对于变更通知来说，与基于轮询的传统I/O方法相比，Watch类更加直接和易用。
 
@@ -127,18 +130,18 @@ NIO的新人有时候会将NIO与“非阻塞I/O”联系起来。NIO远远不�
 
 例二：NIO选择器
 
-[code lang="java"]import java.io.IOException;
-import java.net.InetSocketAddress;
-import java.net.ServerSocket;
-import java.nio.ByteBuffer;
-import java.nio.channels.SelectionKey;
-import java.nio.channels.Selector;
-import java.nio.channels.ServerSocketChannel;
-import java.nio.channels.SocketChannel;
-import java.util.Iterator;
-import java.util.Set;
+    import java.io.IOException;
+	import java.net.InetSocketAddress;
+	import java.net.ServerSocket;
+	import java.nio.ByteBuffer;
+	import java.nio.channels.SelectionKey;
+	import java.nio.channels.Selector;
+	import java.nio.channels.ServerSocketChannel;
+	import java.nio.channels.SocketChannel;
+	import java.util.Iterator;
+	import java.util.Set;
 
-public class MultiPortEcho {
+	public class MultiPortEcho {
     private int        ports[];
     private ByteBuffer echoBuffer = ByteBuffer.allocate(1024);
 
@@ -229,9 +232,9 @@ public class MultiPortEcho {
         new MultiPortEcho(ports);
     }
 }
-[/code]
 
-编译源代码，然后从命令行带参数启动，类似java MultiPortEcho 8005 8006.一旦MultiPortEcho运行，启动一个简单的telnet或者其它终端模拟器在8005和8006端口运行，将看到程序回显了接收到的字符---这些都是在单一线程里完成的。
+
+编译源代码，然后从命令行带参数启动，类似`java MultiPortEcho 8005 8006`.一旦MultiPortEcho运行，启动一个简单的telnet或者其它终端模拟器在8005和8006端口运行，将看到程序回显了接收到的字符---这些都是在单一线程里完成的。
 
 
 
@@ -245,15 +248,15 @@ NIO通常以性能优势作为卖点，其实更准确的说法应该是高响�
 
 下次你需要定义涉及维度到流或者通道的编程问题，尝试着问自己以下几个问题：
 
-l  必须要读写的I/O对象有多少？
+*  必须要读写的I/O对象有多少？
 
-l  在不同的I/O对象间是否有自然顺序，它们是否需要同时发生？
+*  在不同的I/O对象间是否有自然顺序，它们是否需要同时发生？
 
-l  I/O对象仅仅持续一个短间隔还是在整个进程的生命周期都存在？
+*  I/O对象仅仅持续一个短间隔还是在整个进程的生命周期都存在？
 
-l  单线程与几个不同的线程，哪一个更自然？
+*  单线程与几个不同的线程，哪一个更自然？
 
-l  网络交通可能与本地I/O一样还是具有不同模式？
+*  网络交通可能与本地I/O一样还是具有不同模式？
 
 这类分析是在决定什么时候使用流，什么时候使用通道的良好实践。记住，NIO和NIO.2不能代替基本I/O，它们仅仅是补充。
 
@@ -269,13 +272,13 @@ l  网络交通可能与本地I/O一样还是具有不同模式？
 
 例三：NIO中的内存映射
 
-[code lang="java"]import java.io.RandomAccessFile;
-import java.nio.MappedByteBuffer;
-import java.nio.channels.FileChannel;
+	import java.io.RandomAccessFile;
+	import java.nio.MappedByteBuffer;
+	import java.nio.channels.FileChannel;
 
-public class mem_map_example {
-    private static int    mem_map_size = 20 * 1024 * 1024;
-    private static String fn           = "example_memory_mapped_file.txt";
+	public class mem_map_example {
+    	private static int    mem_map_size = 20 * 1024 * 1024;
+    	private static String fn           = "example_memory_mapped_file.txt";
 
     public static void main(String[] args) throws Exception {
         RandomAccessFile memoryMappedFile = new RandomAccessFile(fn, "rw");
@@ -298,9 +301,8 @@ public class mem_map_example {
         System.out.println("\nReading from memory-mapped file '" + fn + "' is complete.");
     }
 }
-[/code]
 
-例三的这个模型快速创建一个20M’的文件example_memory_mapped_file.txt，使用字符A填充，然后读取这个文件的前30个字节。在实际应用中，内存映射不仅仅在于原始的I/O加速，而且在于可以将多个不同的读者与写者同时连接到相同的文件镜像。这个技术强大的令人可怕，但如果使用得当则可以实现显著的加速。众所周知的华尔街交易操作，为了得到比竞争者秒、甚至毫秒级的优势，使用内存映射。
+例三的这个模型快速创建一个20M’的文件`example_memory_mapped_file.txt`，使用字符A填充，然后读取这个文件的前30个字节。在实际应用中，内存映射不仅仅在于原始的I/O加速，而且在于可以将多个不同的读者与写者同时连接到相同的文件镜像。这个技术强大的令人可怕，但如果使用得当则可以实现显著的加速。众所周知的华尔街交易操作，为了得到比竞争者秒、甚至毫秒级的优势，使用内存映射。
 
 
 
@@ -319,12 +321,13 @@ public class mem_map_example {
 
 
 
-[code lang="java"]String some_string = "This is a string that Java natively stores as Unicode.";
-        Charset latin1_charset = Charset.forName("ISO-8859-1");
-        CharsetEncoder latin1_encoder = latin1_charset.newEncoder();
-        ByteBuffer latin1_bbuf = latin1_encoder.encode(CharBuffer.wrap(some_string));[/code]
+    String some_string = "This is a string that Java natively stores as Unicode.";
+    Charset latin1_charset = Charset.forName("ISO-8859-1");
+    CharsetEncoder latin1_encoder = latin1_charset.newEncoder();
+    ByteBuffer latin1_bbuf = latin1_encoder.encode(CharBuffer.wrap(some_string));
+</br>
 
-[code lang="java"]CharsetEncoder latin1_encoder = latin1_charset.newEncoder();[/code]
+	CharsetEncoder latin1_encoder = latin1_charset.newEncoder();
 本例这行有两个错误，已修正(译者注);注意字符集和通道被设计来一起使用，为了确保程序需要在内存映射、异步I/O、编码转换等地方合作时恰当的执行。
 
 
@@ -338,45 +341,14 @@ public class mem_map_example {
 
 
 
-**参考资源**  
+**参考资源**
 
-                              
-
-
-                                 
-
-
-                                    
   * See the [Java 2 SDK Standard Edition (SE) documentation](http://docs.oracle.com/javase/1.4.2/docs/guide/nio/) and [Java SE 7 documentation](http://docs.oracle.com/javase/7/docs/api/java/nio/file/package-summary.html) to learn more about NIO and NIO.2.
-                                    
-
-                                    
   * You'll need [JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/java-se-jdk-7-download-432154.html) or greater to access the NIO.2 package APIs.
-                                    
-
-                                    
-  * "[Master Merlin's new I/O classes](http://www.javaworld.com/jw-09-2001/jw-0907-merlin.html)" (Michael T. Nygard, JavaWorld, September 2001) introduces the `java.nio` package and offers tips for leveraging its nonblocking I/O and memory-mapped buffers.
-                                    
-
-                                    
+  * "[Master Merlin's new I/O classes](http://www.javaworld.com/jw-09-2001/jw-0907-merlin.html)" (Michael T. Nygard, JavaWorld, September 2001) introduces the \`java.nio\` package and offers tips for leveraging its nonblocking I/O and memory-mapped buffers.
   * See "[Use select for high-speed networking](http://www.javaworld.com/jw-04-2003/jw-0411-select.html)" (Greg Travis, JavaWorld, April 2003) for a high-level overview of the New Input/Output APIs, followed by a demo using selectors
                                        to develop a high-speed server.
-                                    
-
-                                    
   * The NIO selector demonstration in this article is modified from one developed by Greg Travis for his article "[Getting started with new I/O (NIO)](http://www.ibm.com/developerworks/java/tutorials/j-nio/section9.html)" (IBM developerWorks, July 2003).
-                                    
-
-                                    
   * For more about channels in NIO.2, see "[An NIO.2 primer, Part 1: The asynchronous channel APIs](http://www.ibm.com/developerworks/java/library/j-nio2-1/index.html)" (Catherine Hope and Oliver Deakin, IBM developerWorks, September 2010).
-                                    
-
-                                 
-                              
 
 
-                             
-
-
-
-                      
