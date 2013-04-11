@@ -107,4 +107,6 @@ Jekyll-Bootstrap 里默认的模板使用了 http 而不是 https 来引用 DISQ
 [告别wordpress，拥抱jekyll---阳志平](http://www.yangzhiping.com/tech/wordpress-to-jekyll.html)
 </br>
 [从Wordpress迁移到Jekyll](http://fengqijun.me/blog/2012/11/17/move-from-wordpress-to-jekyll)
+</br>
+[Play with Jekyll](http://blog.skydark.info/programming/2012/03/23/play-with-jekyll/)
 
