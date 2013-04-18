@@ -5,7 +5,13 @@ description: "迁移 jekyll wordpress"
 category: "技术"
 tags: [迁移, jekyll, wordpress]
 ---
+<link href="http://kevinburke.bitbucket.org/markdowncss/markdown.css" rel="stylesheet"></link>
+
+
 {% include JB/setup %}
+<!--
+  -->
+
 
 在这里的博客部署好了之后，尝试着将wordpress中的blog也迁移过来了，内容不多，但也费了一番周折。
 
